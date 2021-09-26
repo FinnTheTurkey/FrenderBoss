@@ -1,0 +1,6 @@
+[submodule "assimp"]
+	path = assimp
+	url = https://github.com/assimp/assimp.git
+[submodule "Frender"]
+	path = Frender
+	url = https://github.com/FinnTheTurkey/Frender.git
