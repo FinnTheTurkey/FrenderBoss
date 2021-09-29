@@ -103,10 +103,10 @@ int main(int, char**)
 
     auto objs2 = loadModel(renderer, "Assets/Asteroid.glb");
     srand(time(NULL));
-    for (int i = 0; i < 250; i++)
+    for (int i = 0; i < 50; i++)
     {
         rg = FrenderTools::RenderGroup();
-        float rr = 0.5 + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 2.0 - 0.5));
+        float rr = 0.5 + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 4.0 - 0.5));
         for (auto o : objs2)
         {
             auto rots = renderer->getRenderObjectTraits(o);
@@ -119,8 +119,8 @@ int main(int, char**)
         float r2 = -1.0 + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (1.0 - -1.0)));
         float r3 = -1.0 + static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / (1.0 - -1.0)));
         float r = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
-        physics.addBall(glm::vec3(rand() % 150 - 75, rand() % 150 - 75, rand() % 150 - 75), glm::vec3(r1, r2, r3), r,
-                        rr, rr, rg);
+        physics.addBall(glm::vec3(rand() % 100 - 50, rand() % 100 - 50, rand() % 100 - 50), glm::vec3(r1, r2, r3), r,
+                        rr, rr, rg, 5 + i);
     }
 
     // physics.addBall(glm::vec3(5, 0, -5), glm::vec3(-0.2, 0, 0), 1.5, 1, 1, rg2);
